@@ -1,4 +1,4 @@
-import GG.Icons exposing (..)
+import GG.IconsRo exposing (..)
 import GG.IconsRaw as I
 import GG.Colors as C
 
@@ -58,6 +58,7 @@ title xs =
 
 loadFonts = "
     var head   = document.getElementsByTagName('head')[0];
+
     var link3   = document.createElement('link');
     link3.rel   = 'stylesheet';
     link3.type  = 'text/css';
@@ -67,109 +68,100 @@ loadFonts = "
     "
 
 
-icon n txts = 
-  let 
-    (bkgColor, ico) = 
-      case n of
-        1 -> (C.gg01, GG.Icons.gg01) 
-        2 -> (C.gg02, GG.Icons.gg01) 
-        3 -> (C.gg03, GG.Icons.gg01) 
-        4 -> (C.gg04, GG.Icons.gg01) 
-        5 -> (C.gg05, GG.Icons.gg01) 
-        6 -> (C.gg06, GG.Icons.gg01) 
-        7 -> (C.gg07, GG.Icons.gg01) 
-        8 -> (C.gg08, GG.Icons.gg01) 
-        9 -> (C.gg09, GG.Icons.gg01) 
-        10 -> (C.gg10, GG.Icons.gg01) 
-        11 -> (C.gg11, GG.Icons.gg01) 
-        12 -> (C.gg12, GG.Icons.gg01) 
-        13 -> (C.gg13, GG.Icons.gg01) 
-        14 -> (C.gg14, GG.Icons.gg01) 
-        15 -> (C.gg15, GG.Icons.gg01) 
-        16 -> (C.gg16, GG.Icons.gg01) 
-        17 -> (C.gg17, GG.Icons.gg01) 
-        _ -> (C.gg01, GG.Icons.gg01) 
-  in 
-    div [ design <| column <| justifyCenter <| alignItemsCenter <| iconStyle bkgColor] 
-      [ div [ design <| alignSelfStretch <| bold <| fontFamily "Giorgio Sans" <| color "#fff" []] 
-        [ number n
-        , title txts
-        ]
+--icon n txts = 
+--  let 
+--    (bkgColor, ico) = 
+--      case n of
+--        1 -> (C.gg01, GG.Icons.gg01) 
+--        2 -> (C.gg02, GG.Icons.gg01) 
+--        3 -> (C.gg03, GG.Icons.gg01) 
+--        4 -> (C.gg04, GG.Icons.gg01) 
+--        5 -> (C.gg05, GG.Icons.gg01) 
+--        6 -> (C.gg06, GG.Icons.gg01) 
+--        7 -> (C.gg07, GG.Icons.gg01) 
+--        8 -> (C.gg08, GG.Icons.gg01) 
+--        9 -> (C.gg09, GG.Icons.gg01) 
+--        10 -> (C.gg10, GG.Icons.gg01) 
+--        11 -> (C.gg11, GG.Icons.gg01) 
+--        12 -> (C.gg12, GG.Icons.gg01) 
+--        13 -> (C.gg13, GG.Icons.gg01) 
+--        14 -> (C.gg14, GG.Icons.gg01) 
+--        15 -> (C.gg15, GG.Icons.gg01) 
+--        16 -> (C.gg16, GG.Icons.gg01) 
+--        17 -> (C.gg17, GG.Icons.gg01) 
+--        _ -> (C.gg01, GG.Icons.gg01) 
+--  in 
+--    div [ design <| column <| justifyCenter <| alignItemsCenter <| iconStyle bkgColor] 
+--      [ div [ design <| alignSelfStretch <| bold <| fontFamily "Giorgio Sans" <| color "#fff" []] 
+--        [ number n
+--        , title txts
+--        ]
 
-      , div [ design <|  alignSelfStretch <| flex 1 0 "auto" <| justifyCenter <| alignItemsCenter [] ] [ico (dp 1000, dp 1000)]
-      ]
+--      , div [ design <|  alignSelfStretch <| flex 1 0 "auto" <| justifyCenter <| alignItemsCenter [] ] [ico (dp 1000, dp 1000)]
+--      ]
 
 view : Signal.Address Action -> Model -> Html
 view address model = 
+  let 
+    size = (dp 400, dp 400)
+  in 
   div 
   [ design <| Flexy.wrap <| justifyCenter <| alignItemsCenter <| fullscreen] 
-  [ 
-  --, Html.node "script" [] [Html.text loadFonts]
+  [ Html.node "script" [] [Html.text loadFonts]
 
-    I.gg01 (dp 1000, dp 1000)
-  , gg01 (dp 1000, dp 1000)
+  , I.gg01 size
+  , gg01 size
 
-  , I.gg02 (dp 1000, dp 1000)
-  , gg02 (dp 1000, dp 1000)
+  , I.gg02 size
+  , gg02 size
 
-  , I.gg03 (dp 1000, dp 1000)
-  , gg03 (dp 1000, dp 1000)
+  , I.gg03 size
+  , gg03 size
   
-  , I.gg04 (dp 1000, dp 1000)
-  , gg04 (dp 1000, dp 1000)
+  , I.gg04 size
+  , gg04 size
 
-  , I.gg05 (dp 1000, dp 1000)
-  , gg05 (dp 1000, dp 1000)
+  , I.gg05 size
+  , gg05 size
 
-  , I.gg06 (dp 1000, dp 1000)
-  , gg06 (dp 1000, dp 1000)
+  , I.gg06 size
+  , gg06 size
   
-  , I.gg07 (dp 1000, dp 1000)
-  , gg07 (dp 1000, dp 1000)
+  , I.gg07 size
+  , gg07 size
   
-  , I.gg08 (dp 1000, dp 1000)
-  , gg08 (dp 1000, dp 1000)
+  , I.gg08 size
+  , gg08 size
   
-  , I.gg09 (dp 1000, dp 1000)
-  , gg09 (dp 1000, dp 1000)
+  , I.gg09 size
+  , gg09 size
   
-  , I.gg10 (dp 1000, dp 1000)
-  , gg10 (dp 1000, dp 1000)
+  , I.gg10 size
+  , gg10 size
   
-  , I.gg11 (dp 1000, dp 1000)
-  , gg11 (dp 1000, dp 1000)
+  , I.gg11 size
+  , gg11 size
   
-  , I.gg12 (dp 1000, dp 1000)
-  , gg12 (dp 1000, dp 1000)
+  , I.gg12 size
+  , gg12 size
   
-  , I.gg13 (dp 1000, dp 1000)
-  , gg13 (dp 1000, dp 1000)
+  , I.gg13 size
+  , gg13 size
   
-  , I.gg14 (dp 1000, dp 1000)
-  , gg14 (dp 1000, dp 1000)
+  , I.gg14 size
+  , gg14 size
   
-  , I.gg15 (dp 1000, dp 1000)
-  , gg15 (dp 1000, dp 1000)
+  , I.gg15 size
+  , gg15 size
   
-  , I.gg16 (dp 1000, dp 1000)
-  , gg16 (dp 1000, dp 1000)
+  , I.gg16 size
+  , gg16 size
 
-  , I.gg17 (dp 1000, dp 1000)
-  , gg17 (dp 1000, dp 1000)
+  , I.gg17 size
+  , gg17 size
   
-  , I.tgg (dp 1000, dp 1000)
-  , tgg (dp 1000, dp 1000)
-  --, icon 1 [text "NO", br [] [], text "POVERTY"]
-  --, icon 2 [text "ZERO", br [] [], text "HUNGER"]
-  --, icon 3 [text "ZERO", br [] [], text "HUNGER"]
-  --, icon 4 [text "ZERO", br [] [], text "HUNGER"]
-  --, icon 5 [text "ZERO", br [] [], text "HUNGER"]
-  --, icon 6 [text "ZERO", br [] [], text "HUNGER"]
-  --, icon 7 [text "ZERO", br [] [], text "HUNGER"]
-  --, icon 8 [text "ZERO", br [] [], text "HUNGER"]
-    
-
-  --, gg01Orig (dp 1000, dp 1000)
+  , I.tgg size
+  , tgg size
   ]
 
 
