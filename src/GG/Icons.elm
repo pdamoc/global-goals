@@ -8,6 +8,26 @@ import Svg.Attributes exposing
 
 import GG.Colors as C
 
+apex : String
+apex = """
+@font-face {
+  font-family: "Apex";
+  src: url("ApexNewWeb-Book.woff");
+}"""
+
+apexStyle : Svg
+apexStyle = style [type' "text/css"][text apex]
+
+giorgio : String
+giorgio = """
+@font-face {
+  font-family: "Giorgio Sans";
+  src: url("GiorgioSans-Bold-Web.woff");
+}"""
+
+giorgioStyle : Svg
+giorgioStyle = style [type' "text/css"][text giorgio]
+
 dp : a -> String
 dp v = (toString v) ++ "px"
 
@@ -252,12 +272,6 @@ gg17 (w, h) =
       []
     ]
 
-apex = """
-@font-face {
-  font-family: "Apex";
-  src: url("ApexNewWeb-Book.woff");
-}"""
-
 tgg : (String, String) -> Svg
 tgg (w, h) =
   svg 
@@ -310,3 +324,26 @@ tgg (w, h) =
     , path [ d "M413.16 312.2c9.21-7.294 19.348-13.442 30.207-18.278l-39.406-101.66c-23.47 9.855-45.1 23.2-64.27 39.363l73.47 80.575", fill "#2b68a3" ]
       []
     ]
+
+
+iconsList : ( String, String ) -> List Svg
+iconsList size = 
+  [ gg01 size
+  , gg02 size
+  , gg03 size
+  , gg04 size
+  , gg05 size
+  , gg06 size
+  , gg07 size
+  , gg08 size
+  , gg09 size
+  , gg10 size
+  , gg11 size
+  , gg12 size
+  , gg13 size
+  , gg14 size
+  , gg15 size
+  , gg16 size
+  , gg17 size
+  , tgg size
+  ]
